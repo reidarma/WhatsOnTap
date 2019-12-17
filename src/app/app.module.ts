@@ -9,6 +9,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatCheckboxModule} from '@angular/material/checkbox';
+import { MatSortModule } from '@angular/material/sort';
 
 import {MatFileUploadModule} from 'angular-material-fileupload';
 import { ColorPickerModule } from 'ngx-color-picker';
@@ -61,6 +62,7 @@ import { LabelService } from './services/label.service';
     ReactiveFormsModule,
     MatAutocompleteModule,
     MatCheckboxModule,
+    MatSortModule,
     LayoutModule,
     Routing
   ],

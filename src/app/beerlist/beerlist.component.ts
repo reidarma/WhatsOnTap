@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MatTableDataSource, MatSnackBar } from '@angular/material';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatTableDataSource, MatSnackBar, MatSort } from '@angular/material';
 import { MatDialog} from '@angular/material';
 
 import { BeerformComponent } from '../beerform/beerform.component';
@@ -20,6 +20,8 @@ import * as signalR from "@aspnet/signalr";
   styleUrls: ['./beerlist.component.scss']
 })
 export class BeerlistComponent implements OnInit, ListComponent {
+  @ViewChild(MatSort) sort: MatSort;
+
   listItem: IBeer;
   dbops: string;
   loadingState: boolean;
@@ -74,6 +76,7 @@ export class BeerlistComponent implements OnInit, ListComponent {
                   .sort((a, b) => {
                     return a.name.localeCompare(b.name)
                   });
+                this.dataSource.sort = this.sort;
               });
           });
       });
